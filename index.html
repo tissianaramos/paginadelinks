@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tissiana Ramos — nutricionista gastrointestinal e Personal Diet. Acompanhamento individual e planejamento alimentar para a família.">
+  <meta name="theme-color" content="#f1ede7">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>Tissiana Ramos · Nutricionista</title>
+  <style>
+    :root {
+      --paper: #f1ede7;
+      --paper-light: #f7f4ef;
+      --ink: #151515;
+      --ink-soft: #57534d;
+      --deep: #46543d;
+      --gold: #d3a23a;
+      --clay: #c96735;
+      --clay-text: #a7552c;   /* mesmo laranja, escurecido só para os rótulos pequenos lerem bem */
+      --stone: #dfe0d3;
+      --sand: #ecdfc4;
+      --line: rgba(21, 21, 21, 0.14);
+      --display: "Tamil Sangam MN", "Sora", ui-sans-serif, system-ui, sans-serif;
+      --text: "Sora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background-color: var(--paper);
+      font-family: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* TRAMA DE LINHO ---------------------------------------------------------
+       Mesma textura das landing pages, em multiply sobre o creme.
+       Arquivo mais escuro = efeito mais marcado. background-size = tamanho do
+       fio. Para desligar, apague este bloco. */
+    body {
+      background-image: url(img/textura-linho.jpg);
+      background-size: 280px 280px;
+      background-repeat: repeat;
+      background-blend-mode: multiply;
+    }
+    a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+    img { display: block; max-width: 100%; }
+
+    .page {
+      width: min(100% - 40px, 460px);
+      margin-inline: auto;
+      padding-block: 34px 52px;
+    }
+
+    /* ---- topo: logo, foto, nome ---- */
+    .brand { display: grid; justify-items: center; text-align: center; }
+    .brand__logo { height: 44px; width: auto; }
+    .brand__photo {
+      width: 126px;
+      aspect-ratio: 17 / 21;
+      margin: 26px 0 0;
+      overflow: hidden;
+      background: var(--stone);
+      border: 1px solid rgba(21, 21, 21, 0.16);
+      border-radius: 76px 76px 18px 18px;
+      box-shadow: 0 22px 44px rgba(21, 21, 21, 0.13);
+    }
+    .brand__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; }
+    .brand h1 {
+      margin: 24px 0 0;
+      font-family: var(--display);
+      font-size: 33px;
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+    .brand__role {
+      margin: 12px 0 0;
+      color: var(--ink-soft);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+    .brand__role b { color: var(--clay-text); font-weight: 600; }
+    .brand__line {
+      max-width: 340px;
+      margin: 20px 0 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* ---- divisor ---- */
+    .rule {
+      height: 1px;
+      margin: 34px 0 26px;
+      background: var(--line);
+      border: 0;
+    }
+
+    /* ---- cards de link ---- */
+    .links { display: grid; gap: 14px; }
+    .card {
+      display: grid;
+      grid-template-columns: 1fr 38px;
+      align-items: end;
+      gap: 18px;
+      padding: 24px 22px 24px;
+      background: var(--paper-light);
+      border: 1px solid var(--line);
+      border-radius: 2px 40px 2px 2px;
+      transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      background: #fff;
+      box-shadow: 0 18px 34px rgba(21, 21, 21, 0.09);
+    }
+    .card__eyebrow {
+      margin: 0;
+      color: var(--clay-text);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+    .card__title {
+      margin: 8px 0 0;
+      font-family: var(--display);
+      font-size: 25px;
+      font-weight: 300;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+    .card__desc { margin: 8px 0 0; color: var(--ink-soft); font-size: 14px; line-height: 1.55; }
+    .card__arrow {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: var(--stone);
+      border-radius: 50%;
+      font-size: 16px;
+      transition: background 200ms ease, color 200ms ease;
+    }
+    .card:hover .card__arrow { background: var(--deep); color: var(--paper-light); }
+
+    /* ---- botões ---- */
+    .button {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px 10px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button__arrow {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 16px;
+    }
+    .button--clay { background: var(--clay); border-color: var(--clay); color: var(--ink); }
+    .button--clay .button__arrow { background: rgba(21, 21, 21, 0.15); }
+    .button--clay:hover { background: var(--deep); border-color: var(--deep); color: #fff; }
+    .button--ghost { background: transparent; border-color: rgba(21, 21, 21, 0.26); color: var(--ink); }
+    .button--ghost .button__arrow { background: rgba(21, 21, 21, 0.08); }
+    .button--ghost:hover { background: var(--ink); border-color: var(--ink); color: var(--paper-light); }
+    .button--ghost:hover .button__arrow { background: rgba(255, 255, 255, 0.16); }
+
+    .rule--split { margin: 34px 0; }
+    .actions { display: grid; gap: 12px; }
+
+    /* ---- rodapé ---- */
+    .foot {
+      margin-top: 38px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    .foot p { margin: 0; color: var(--ink-soft); font-size: 11px; letter-spacing: 0.04em; }
+    .foot p + p { margin-top: 6px; }
+
+    @media (max-width: 380px) {
+      .page { width: calc(100% - 28px); }
+      .card { padding: 22px 18px 24px; grid-template-columns: 1fr 34px; gap: 12px; }
+      .card__title { font-size: 23px; }
+      .brand h1 { font-size: 31px; }
+      .brand__role { font-size: 10px; letter-spacing: 0.12em; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="brand">
+      <img class="brand__logo" src="img/logo-tissi-ramos.png" alt="Nutri Tissi Ramos" width="440" height="149">
+      <figure class="brand__photo">
+        <img src="img/tissi-hero.jpg" alt="Tissiana Ramos, nutricionista">
+      </figure>
+      <h1>Tissiana Ramos</h1>
+      <p class="brand__role">Nutricionista · <b>CRN 2669</b></p>
+      <p class="brand__line">Nutrição gastrointestinal e Personal Diet. Há mais de 20 anos construindo estratégias alimentares que cabem na rotina real.</p>
+    </header>
+
+    <hr class="rule">
+
+    <nav class="links">
+
+      <a class="card" href="https://tissianaramos.github.io/metodovidapossivel/">
+        <div>
+          <p class="card__eyebrow">Acompanhamento individual</p>
+          <h2 class="card__title">Método Vida Possível</h2>
+          <p class="card__desc">Uma estratégia alimentar construída a partir dos seus sintomas, exames e objetivos.</p>
+        </div>
+        <span class="card__arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="card" href="https://tissianaramos.github.io/Personaldiet/">
+        <div>
+          <p class="card__eyebrow">Para a casa toda</p>
+          <h2 class="card__title">Personal Diet Família</h2>
+          <p class="card__desc">Cardápio, lista de compras e orientações de preparo para a rotina da sua família.</p>
+        </div>
+        <span class="card__arrow" aria-hidden="true">↗</span>
+      </a>
+
+    </nav>
+
+    <hr class="rule rule--split">
+
+    <div class="actions">
+      <!-- TROCAR O NÚMERO: formato wa.me/55 + DDD + celular com 9 dígitos -->
+      <a class="button button--clay" href="https://wa.me/557799052802?text=Ol%C3%A1%21%20Vim%20pelo%20Instagram%20e%20quero%20falar%20com%20a%20Tissi.">
+        <span>Falar no WhatsApp</span>
+        <span class="button__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="button button--ghost" href="https://instagram.com/tissiramosnutri" target="_blank" rel="noreferrer">
+        <span>@tissiramosnutri</span>
+        <span class="button__arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <footer class="foot">
+      <p>Tissiana Ramos · Nutricionista · CRN 2669</p>
+      <p>© 2026 · Todos os direitos reservados</p>
+    </footer>
+
+  </main>
+</body>
+</html>
